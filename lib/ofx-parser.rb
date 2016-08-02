@@ -104,6 +104,7 @@ module OfxParser
         acc_info = AccountInfo.new
         acc_info.desc = (info_doc/"DESC").inner_text
         acc_info.number = (info_doc/"ACCTID").first.inner_text
+        acc_info.branch_id = (info_doc/"BRANCHID").first.inner_text unless (info_doc/"BANKID").empty?
         acc_info.bank_id = (info_doc/"BANKID").first.inner_text unless (info_doc/"BANKID").empty?
         acc_info.type = (info_doc/"ACCTTYPE").first.inner_text unless (info_doc/"ACCTTYPE").empty?
         account_infos << acc_info
