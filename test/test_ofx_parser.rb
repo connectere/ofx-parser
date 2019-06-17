@@ -43,6 +43,7 @@ class OfxParserTest < MiniTest::Unit::TestCase
     assert_kind_of DateTime, @parser.parse_datetime('20070622')
     assert_kind_of DateTime, @parser.parse_datetime('20070622190000')
     assert_kind_of DateTime, @parser.parse_datetime('20070622190000.200')
+    assert_kind_of NilClass, @parser.parse_datetime('00000000000000')
   end
 
   def test_sign_on
